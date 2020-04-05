@@ -28,10 +28,11 @@ const AddUser = (props: AddUserProps): JSX.Element => {
       }
     }}>
       <div className="pb-4">
-        <label htmlFor="name" className="text-xl font-semibold text-gray-700 block">Add user</label>
+        <label htmlFor="name" className="text-xl font-semibold text-gray-700 block">Add New User</label>
         <input type="text"
                name="name"
                id="name"
+               data-testid="add-user-input"
                required
                value={user}
                onChange={ev => handleNameInputChange(ev.target.value)}
@@ -40,10 +41,11 @@ const AddUser = (props: AddUserProps): JSX.Element => {
       </div>
       <div className="pb-4">
         <button
+          data-testid="add-button"
           onClick={handleAddUser}
           disabled={btnDisabled}
           className={`${btnDisabled ? 'bg-gray-400' : 'bg-blue-500 hover:bg-blue-700'} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow`}
-          type="button">Add User
+          type="button">Add
         </button>
       </div>
 
