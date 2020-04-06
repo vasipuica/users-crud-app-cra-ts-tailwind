@@ -37,9 +37,12 @@ const UserList = (props: UserListProps): JSX.Element => {
       {hasUsers && users.map((user) => (
         <div
           className="mt-2 w-2/3 py-2 px-4 text-green-900 bg-transparent bg-blue-100 flex justify-between items-center rounded shadow font-semibold"
-          key={user.id}>
+          key={user.id}
+          data-testid="user-entry"
+        >
           <span className="inline-block tracking-wide">{user.name}</span>
           <button onClick={() => onUserRemove(user.id)}
+                  data-testid="btn-remove-user-entry"
                   className="text-red-700 hover:bg-red-700 hover:text-white rounded-md font-semibold px-3 py-1 hover:shadow">x
           </button>
         </div>
@@ -47,6 +50,7 @@ const UserList = (props: UserListProps): JSX.Element => {
       {(hasUsers && users.length > 0) && (
         <div className="mt-4">
           <button onClick={onPickUser}
+                  data-testid="btn-pick-random-user"
                   className="text-white hover:bg-green-600 bg-green-800 hover:text-white rounded-md font-semibold px-4 py-2 shadow-lg">Pick
             Random User
           </button>
